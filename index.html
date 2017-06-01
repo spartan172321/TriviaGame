@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  	<!-- links personal stylesheet -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<script src="assets/javascript/app.js"></script>
+
+	<title>Trivia Game</title>
+
+</head>
+
+<body>
+	<header class="container">
+	<h1 class="col-xs-12 col-sm-8 col-sm-offset-2">Totally Trivial Trivia!!</h1>
+	</header>
+
+	<section class="container">
+		<div class="col-xs-12 col-sm-8 col-sm-offset-2" id="qBoard">
+			<div id="time">
+				Time remaining: <span id="timeLeft"></span> Seconds
+			</div>
+			<!-- displays button to start game -->
+			<button type="button" class="btn btn-success" id="start">Start</button>
+			<!-- display table of questions and answers when game starts -->
+			<table id="trivia">
+	    	<thead>
+		      <tr>
+		        <th id="question">What is the name of the first planet?</th>
+		      </tr>
+	    	</thead>
+		    <tbody>
+		    	<tr>
+		        <td><img src="" id="image"></td>
+		      </tr>
+		      <tr>
+		        <td id="choice1"></td>
+		      </tr>
+		      <tr>
+		        <td id="choice2"></td>
+		      </tr>
+		      <tr>
+		        <td id="choice3"></td>
+		      </tr>
+		      <tr>
+		        <td id="choice4"></td>
+		      </tr>
+		    </tbody>
+		  </table>
+		</div>
+	</section>
+</body>
+
+</html>
