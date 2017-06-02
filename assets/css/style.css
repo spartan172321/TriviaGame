@@ -36,6 +36,9 @@ header h1{
 
 
 table{
+	display: none table;
+	width: 70%;
+	text-align: center;
 	border: 1px hidden #ddd;
 	margin: auto;
 	font-size: 20px;
@@ -43,10 +46,27 @@ table{
 	padding: 10px 15px;
 }
 
+th {
+    text-align: center;
+}
+
 td:hover{
 	background-color:#BEBEBE;
 }
 
+#result{
+	display: none;
+	font-size: 20px;
+	line-height: 30px;
+}
+
+#score{
+	display: none;
+	font-size: 20px;
+	line-height: 30px;
+}
+
 #image{
-	width: 80%;
+	width: 70%;
+	max-height: 400px;
 }

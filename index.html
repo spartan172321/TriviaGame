@@ -21,37 +21,46 @@
 	</header>
 
 	<section class="container">
-		<div class="col-xs-12 col-sm-8 col-sm-offset-2" id="qBoard">
-			<div id="time">
-				Time remaining: <span id="timeLeft"></span> Seconds
+		<div class="row">
+			<div class="col-xs-12 col-sm-8 col-sm-offset-2" id="qBoard">
+				<div id="time">
+					Time remaining: <span id="timeLeft"></span> Seconds
+				</div>
+				<!-- displays button to start game -->
+				<button type="button" class="btn btn-success" id="start">Start</button>
+				<!-- display table of questions and answers when game starts -->
+				<table id="trivia">
+		    	<thead>
+			      <tr>
+			        <th id="question"></th>
+			      </tr>
+		    	</thead>
+			    <tbody class='option'>
+			      <tr>
+			        <td id="choice1"></td>
+			      </tr>
+			      <tr>
+			        <td id="choice2"></td>
+			      </tr>
+			      <tr>
+			        <td id="choice3"></td>
+			      </tr>
+			      <tr>
+			        <td id="choice4"></td>
+			      </tr>
+			    </tbody>
+			  </table>
+			  <div id="result">
+			  	<img src="" id="image">
+			  	<p id="message"></p>
+			  	<p id="answer"></p>
+			  </div>
+			  <div id="score">
+			  	<p id="wins"></p>
+			  	<p id="losses"></p>
+			  	<p id="unanswered"></p>
+			  </div>
 			</div>
-			<!-- displays button to start game -->
-			<button type="button" class="btn btn-success" id="start">Start</button>
-			<!-- display table of questions and answers when game starts -->
-			<table id="trivia">
-	    	<thead>
-		      <tr>
-		        <th id="question">What is the name of the first planet?</th>
-		      </tr>
-	    	</thead>
-		    <tbody>
-		    	<tr>
-		        <td><img src="" id="image"></td>
-		      </tr>
-		      <tr>
-		        <td id="choice1"></td>
-		      </tr>
-		      <tr>
-		        <td id="choice2"></td>
-		      </tr>
-		      <tr>
-		        <td id="choice3"></td>
-		      </tr>
-		      <tr>
-		        <td id="choice4"></td>
-		      </tr>
-		    </tbody>
-		  </table>
 		</div>
 	</section>
 </body>

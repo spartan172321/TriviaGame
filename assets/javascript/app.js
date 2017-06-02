@@ -1,5 +1,5 @@
 // time counter variable
-var countDown = 10;
+var countDown = 30;
 // var for keeping track of rights
 var right = 0;
 // var for keeping track of wrongs
@@ -35,12 +35,13 @@ var getQues = Object.keys(qAnda)
 // array with the right answers only
 var rightAnswer = ["Chess", "Unicorn", "One", "Abu", "Charles Babbage"]
 
+// array of images 
 var imageArray = ["assets/images/chess.gif", "assets/images/unicorn.gif", "assets/images/one.jpg", "assets/images/abu.gif", "assets/images/Charles_Babbage.jpg"]
 
 // used to keep track of questions asked
 var index = 0
 // test timer
-var y = 0
+
 
 // the code block will only function after the page is loaded
 $(document).ready(function(){
@@ -71,13 +72,17 @@ $(document).ready(function(){
 			index++;
 			setTimeout(getQuestion, 5000);
 		}
-		console.log(y++)
 	}
 
 	function getQuestion(){
-		$('#image').attr("src",'');
+		$('table').show();
+		$('.option').show()
+		$('#result').hide();
 
 		if(index<getQues.length){
+			// start timer
+			countDown = 30;
+			timer();
 			// Displays the question from the qAnda object based on the index value
 			$('#question').html(getQues[index]);
 			// Displays the choices for the question
@@ -85,18 +90,15 @@ $(document).ready(function(){
 			$('#choice2').html(qAnda[getQues[index]][1]);
 			$('#choice3').html(qAnda[getQues[index]][2]);
 			$('#choice4').html(qAnda[getQues[index]][3]);
-			// start timer
-			countDown = 10;
-			timer();
 		}
 		else if(index == getQues.length){
 			// display final scores
 			clearInterval(intervalId);
-			$('#question').html('');
-			$('#choice1').html('Correct Answers: ' + right);
-			$('#choice2').html('Incorrect Answers: ' + wrong);
-			$('#choice3').html('Unanswered: ' + unanswered);
-			$('#choice4').html('');
+			$('table').hide();
+			$('#score').show();
+			$('#wins').html('Correct Answers: ' + right);
+			$('#losses').html('Incorrect Answers: ' + wrong);
+			$('#unanswered').html('Unanswered: ' + unanswered);
 		}
 
 	};
@@ -139,7 +141,7 @@ $(document).ready(function(){
 		}
 		else{
 			$('#image').attr("src", imageArray[index]);
-			displayWrong()
+			displayWrong();
 			wrong++;
 		}
 		index++;
@@ -155,7 +157,7 @@ $(document).ready(function(){
 		}
 		else{
 			$('#image').attr("src", imageArray[index]);
-			displayWrong()
+			displayWrong();
 			wrong++;
 		}
 		index++;
@@ -182,24 +184,24 @@ $(document).ready(function(){
 
 
 	function displayCorrect(){
-		$('#choice1').text('Correct!')
-		$('#choice2').text('')
-		$('#choice3').text('')
-		$('#choice4').text('')
+		$('.option').hide()
+		$('#message').text('Correct!')
+		$('#answer').text('')
+		$('#result').show();
 	}
 
 	function displayWrong(){
-		$('#choice1').text('Wrong!')
-		$('#choice2').text(rightAnswer[index])
-		$('#choice3').text('')
-		$('#choice4').text('')
+		$('.option').hide()
+		$('#message').text('Wrong!')
+		$('#answer').text(rightAnswer[index])
+		$('#result').show();
 	}
 
 	function displayTimeup(){
-		$('#choice1').text('Time is up!')
-		$('#choice2').text(rightAnswer[index])
-		$('#choice3').text('')
-		$('#choice4').text('')
+		$('.option').hide()
+		$('#message').text('Time is up!')
+		$('#answer').text(rightAnswer[index])
+		$('#result').show();
 	}
 
 
@@ -208,7 +210,7 @@ $(document).ready(function(){
 	$("#start").click(function(){
 		getQuestion();
 		// remove the start button from screen
-		$("#start").detach();
+		$("#start").hide();
 	})
 
 
